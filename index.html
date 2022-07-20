@@ -18,8 +18,44 @@
     <title>JS Sign Up Form</title>
 </head>
 <body>
-    <form>
-        <h2>Sign Up</h2>
-    </form>
+    <div class="form-box">
+        <form>
+            <h1>Sign Up</h1>
+            <div>
+                <label for="fname">Enter your name:</label>
+                <input type="text" id="fname" name="fname" placeholder="John" required>
+                <p></p>
+            </div>
+            <div>
+                <label for="lname">Enter your surname:</label>
+                <input type="text" id="lname" name="lname" placeholder="Stone" required>
+                <p></p>
+            </div>
+            <div>
+                <label for="age">Enter your age:</label>
+                <input type="number" id="age" name="age" min="0" max="130" placeholder="18" required>
+                <p></p>
+            </div>
+            <div>
+                <label for="email">Enter your email:</label>
+                <input type="email" id="email" name="email" placeholder="johnstone@gmail.com" required>
+                <p></p>
+            </div>
+            <div>
+                <label for="pwd">Enter your password:</label>
+                <input type="password" id="pwd" name="pwd" placeholder="********" required>
+                <p></p>
+            </div>
+            <div>
+                <label for="conPwd">Confirm your password:</label>
+                <input type="password" id="conPwd" name="conPwd" placeholder="********" required>
+                <p></p>
+            </div>
+            <div>
+                <button>Sign Up</button>
+            </div>
+            <a href="#">Already have an account? Log in!</a>
+        </form>
+    </div>
 </body>
 </html>
