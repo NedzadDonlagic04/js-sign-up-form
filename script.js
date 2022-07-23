@@ -1,17 +1,17 @@
-//Defining an object which will store all the type of errors
-//we expect to occur during the sign up process
-const errors = {
-    'fname':[],
-    'lname':[],
-    'pwd':[],
-    'conPwd':[]
-};
+// Using the querySelector method got all the needed inputs
+const fName=document.querySelector('#fname');
+const lName=document.querySelector('#lname');
+const pwd=document.querySelector('#pwd');
+const conPwd=document.querySelector('#conPwd');
 
-//Gathering all the necessary input tags
-const inputTags=[];
-for(const error in errors)
-{
-    const input=document.querySelector(`input[name='${error}']`);
-    inputTags.push(input);
-}
+// Using the querySelector method got the sign up form
+const form=document.querySelector('form');
+
+// Adding an event listener to stop the form from submitting
+// until all the needed inputs are verified
+form.addEventListener('submit', event => {
+    event.preventDefault();
+
+    
+});
 
