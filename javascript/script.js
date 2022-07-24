@@ -14,6 +14,9 @@ const signUpBtn=document.querySelector('#sign-up-btn');
 // inside the inputs good to be sent to the backend
 const counterList=[0,0,0,0];
 
+// Function used to test does the passed value equal 1
+const listTest = arrItem => arrItem===1;
+
 // Adding an event listener to stop the form from submitting
 // until all the needed inputs are verified
 form.addEventListener('input', event => {
@@ -27,12 +30,18 @@ form.addEventListener('input', event => {
             counterList[1]=lastNameVal(lName);
             break;
         case 'pwd':
-            counterList[2];
+            counterList[2]=pwdVal(pwd);
             break;
         case 'conPwd':
-            counterList[3];
+            counterList[3]=conPwdVal(pwd,conPwd);
     }
 
-    console.log(counterList);
-
+    if(counterList.every(listTest)===true)
+    {
+        signUpBtn.disabled=false;
+    }
+    else
+    {
+        signUpBtn.disabled=true;
+    }
 });
