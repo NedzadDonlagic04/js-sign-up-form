@@ -83,3 +83,8 @@ body{
     text-align: center;
     padding-top: 50px;
 }
+
+.btn-div{
+    display: flex;
+    justify-content: center;
+}
