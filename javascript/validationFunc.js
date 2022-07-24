@@ -30,7 +30,7 @@ If the validation is good it returns 1 if it isn't it
 returns 0
 */
 
-const firstNameVal = (fName) => {
+const firstNameVal = fName => {
     const min=1,
           max=25,
           regexp=new RegExp(/^[a-zA-Z]+$/),
@@ -83,7 +83,7 @@ message under the name input.If the validation is good it
 returns 1 if it isn't it returns 0
 */
 
-const lastNameVal = (lName) => {
+const lastNameVal = lName => {
     const min=1,
           max=30,
           regexp=new RegExp(/^[a-zA-Z]+$/),
@@ -103,6 +103,76 @@ const lastNameVal = (lName) => {
     if(valueSplit.length>2 || evaluateLNames(valueSplit,regexp))
     {
         p.innerText+=`Surname contains invalid characters.`;
+    }
+
+    if(p.innerText==='')
+    {
+        return 1;
+    }
+    return 0;
+}
+
+/*
+Function pwdVal is used to validate the entered password,
+it will check does the password fit into a given range,
+the characters used in it containing only characters from 
+the english alphabet,numbers from 0-9 and the _ character,
+and display the correct error message under the password 
+input.If the validation is good it returns 1 if it isn't it 
+returns 0
+*/
+
+const pwdVal = pwd => {
+    const min=8,
+    max=20,
+    regexp=new RegExp(/^[a-zA-Z0-9_]+$/),
+    value=pwd.value;
+    const div=pwd.closest('div');
+    const p=div.querySelector('p');
+
+    p.innerText='';
+
+    if(lengthValidation(value.length,min,max)===false)
+    {
+        p.innerText+=`Password length has to be between ${min} and ${max}.`;
+    }
+    if(regexp.test(value)===false)
+    {
+        p.innerText+='Password contains invalid characters.';
+    }
+
+    if(p.innerText==='')
+    {
+        return 1;
+    }
+    return 0;
+}
+
+/*
+Function conPwdVal is used to validate the confirmation
+of the previously entered password,it checks everything 
+the pwdVal function does but adds on the check for the 
+passwords matching,if the validation is successful returns
+1 and if it isn't returns 0
+*/
+
+const conPwdVal = (pwd,conPwd) => {
+    const min=8,
+    max=20,
+    regexp=new RegExp(/^[a-zA-Z0-9_]+$/),
+    value=conPwd.value;
+    const div=conPwd.closest('div');
+    const p=div.querySelector('p');
+
+    p.innerText='';
+
+    const cond1=lengthValidation(value.length,min,max)===false;
+    const cond2=regexp.test(value)===false;
+    const cond3=value!==pwd.value;
+
+    if(cond1 || cond2 || cond3)
+    {
+        p.innerText+="Passwords don't match";
     }
 
     if(p.innerText==='')
