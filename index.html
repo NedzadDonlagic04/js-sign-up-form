@@ -13,13 +13,14 @@
     <link rel="stylesheet" href="./style.css">
     <!-- End of connecting with the CSS -->
     <!-- Start of connecting with the Javascript -->
-    <script type="text/javascript" src="./script.js" defer></script>
+    <script type="text/javascript" src="./javascript/validationFunc.js" defer></script>
+    <script type="text/javascript" src="./javascript/script.js" defer></script>
     <!-- End of connecting with the Javascript -->
     <title>JS Sign Up Form</title>
 </head>
 <body>
     <div class="form-box">
-        <form>
+        <form method="POST">
             <h1>Sign Up</h1>
             <div>
                 <label for="fname">Enter your name:</label>
@@ -51,8 +52,8 @@
                 <input type="password" id="conPwd" name="conPwd" placeholder="********" required>
                 <p></p>
             </div>
-            <div>
-                <button id="sign-up-btn">Sign Up</button>
+            <div class="btn-div">
+                <button id="sign-up-btn" disabled>Sign Up</button>
             </div>
             <a href="#">Already have an account? Log in!</a>
         </form>
